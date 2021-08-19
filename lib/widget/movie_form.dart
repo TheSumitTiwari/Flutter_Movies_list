@@ -43,7 +43,26 @@ class _MovieFormWidgetState extends State<MovieFormWidget> {
                 height: 300,
                 decoration: BoxDecoration(color: Colors.red[200]),
                 child: img != ''
-                    ? imageFromBase64String(img)
+                    ? Container(
+                        decoration: BoxDecoration(
+                          boxShadow: [
+                            //background color of box
+                            BoxShadow(
+                              color: Colors.black26,
+                              blurRadius: 10.0, // soften the shadow
+                              spreadRadius: 5.0, //extend the shadow
+                              offset: Offset(
+                                15.0, // Move to right 10  horizontally
+                                15.0, // Move to bottom 10 Vertically
+                              ),
+                            )
+                          ],
+                          border: Border.all(
+                            width: 2,
+                          ),
+                        ),
+                        child: imageFromBase64String(img),
+                      )
                     : Container(
                         decoration: BoxDecoration(color: Colors.red[200]),
                         width: 200,
